@@ -1,0 +1,7 @@
+- [x] Update HTML: Replace two lang buttons with one toggle button in .right
+- [x] Update JS: Ensure toggle functionality works for language switching (no changes needed, already implemented)
+- [x] Test the changes (opened in browser)
+- [x] Add theme toggle button in Cv.html next to language button
+- [x] Add CSS styling for theme-toggle button in Cv.css
+- [x] Add JavaScript functionality for theme toggle with localStorage in Cv.js
+- [x] Test dark/light mode toggle and persistence

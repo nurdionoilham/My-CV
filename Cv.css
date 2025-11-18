@@ -1,0 +1,494 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* ===== HEADER ===== */
+header {
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 20px;
+    margin-right: auto;
+}
+
+.menu {
+    position: static;
+    display: flex;
+    gap: 40px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    background: #41dd76;
+    border-radius: 50%;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 800;
+    color: #222;
+    line-height: 1.2;
+    max-width: 800px;
+}
+
+.hero p {
+    font-size: clamp(14px, 2vw, 18px);
+    color: #777;
+    max-width: 600px;
+    margin-top: 12px;
+}
+
+/* Buttons */
+.btn-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-green,
+.btn-white {
+    padding: 12px 32px;
+    font-size: clamp(12px, 2vw, 16px);
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-green {
+    background: #41dd76;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(65, 221, 118, 0.4);
+}
+
+.btn-white {
+    background: #fff;
+    color: #333;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== SHAPES ===== */
+.shape {
+    background: #fff;
+    width: clamp(40px, 12vw, 160px);
+    height: clamp(40px, 12vw, 160px);
+    position: absolute;
+    z-index: 0;
+    filter: drop-shadow(0 20px 25px rgba(0,0,0,0.1));
+    opacity: 1;
+    border-radius: 50%;
+    border: 2px solid #41dd76;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Posisi responsif */
+.s1 { top: 5%; left: 5%; }
+.s2 { top: 5%; right: 10%; border-radius: 60% 0 0 0; }
+.s3 { bottom: 2%; left: 10%; border-radius: 0 60% 0 0; }
+.s4 { bottom: 5%; right: 12%; border-radius: 0 0 0 60%; }
+.s5 { right: 8%; top: 25%; }
+.s6 { left: 6%; bottom: 20%; }
+
+/* ===== FLOAT ELEMENTS ===== */
+.scroll {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #111;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+.award {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #fff;
+    padding: 16px 22px;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(65, 221, 118, 0.12);
+    font-size: 14px;
+}
+
+/* ===== THEME BUTTON ===== */
+.theme-btn {
+    background: #fff;
+    color: #222;
+    border: 1px solid #41dd76;
+    border-radius: 18px;
+    padding: 4px 14px;
+    margin-right: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+}
+.theme-btn:hover,
+.theme-btn.active {
+    background: #41dd76;
+    color: #fff;
+}
+
+/* ===== LANGUAGE BUTTON ===== */
+.lang-btn {
+    background: #fff;
+    color: #222;
+    border: 1px solid #41dd76;
+    border-radius: 18px;
+    padding: 4px 14px;
+    margin-right: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+}
+.lang-btn:hover,
+.lang-btn.active {
+    background: #41dd76;
+    color: #fff;
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #181a20;
+        color: #f2f2f2;
+    }
+    header {
+        background: #23252b;
+    }
+    .logo {
+        color: #41dd76;
+    }
+    .menu a {
+        color: #f2f2f2;
+    }
+    .right {
+        color: #f2f2f2;
+    }
+    .icon {
+        background: #222;
+        border: 1px solid #41dd76;
+    }
+    .hero {
+        background: #181a20;
+    }
+    .hero h1 {
+        color: #f2f2f2;
+    }
+    .hero p {
+        color: #bdbdbd;
+    }
+    .btn-green {
+        background: #41dd76;
+        color: #181a20;
+    }
+    .btn-white {
+        background: #23252b;
+        color: #41dd76;
+        border: 1px solid #41dd76;
+    }
+    .shape {
+        background: #252730;
+        border: 2px solid #41dd76;
+        filter: drop-shadow(0 20px 25px rgba(65,221,118,0.18));
+        opacity: 0.95; /* lebih jelas di dark mode */
+    }
+    .scroll {
+        background: #23252b;
+        color: #41dd76;
+        border: 2px solid #41dd76;
+    }
+    .award {
+        background: #23252b;
+        color: #41dd76;
+        box-shadow: 0 6px 24px rgba(65, 221, 118, 0.18);
+    }
+    .lang-btn {
+        background: #23252b;
+        color: #41dd76;
+        border: 1px solid #41dd76;
+    }
+    .lang-btn:hover,
+    .lang-btn.active {
+        background: #41dd76;
+        color: #23252b;
+    }
+    .theme-btn {
+        background: #23252b;
+        color: #41dd76;
+        border: 1px solid #41dd76;
+    }
+    .theme-btn:hover,
+    .theme-btn.active {
+        background: #41dd76;
+        color: #23252b;
+    }
+}
+
+/* ===== MANUAL DARK MODE ===== */
+body.manual-dark,
+html.manual-dark {
+    background: #181a20 !important;
+    color: #f2f2f2 !important;
+}
+body.manual-dark header,
+html.manual-dark header {
+    background: #23252b !important;
+}
+body.manual-dark .logo,
+html.manual-dark .logo {
+    color: #41dd76 !important;
+}
+body.manual-dark .menu a,
+html.manual-dark .menu a {
+    color: #f2f2f2 !important;
+}
+body.manual-dark .right,
+html.manual-dark .right {
+    color: #f2f2f2 !important;
+}
+body.manual-dark .icon,
+html.manual-dark .icon {
+    background: #222 !important;
+    border: 1px solid #41dd76 !important;
+}
+body.manual-dark .hero,
+html.manual-dark .hero {
+    background: #181a20 !important;
+}
+body.manual-dark .hero h1,
+html.manual-dark .hero h1 {
+    color: #f2f2f2 !important;
+}
+body.manual-dark .hero p,
+html.manual-dark .hero p {
+    color: #bdbdbd !important;
+}
+body.manual-dark .btn-green,
+html.manual-dark .btn-green {
+    background: #41dd76 !important;
+    color: #181a20 !important;
+}
+body.manual-dark .btn-white,
+html.manual-dark .btn-white {
+    background: #23252b !important;
+    color: #41dd76 !important;
+    border: 1px solid #41dd76 !important;
+}
+body.manual-dark .shape,
+html.manual-dark .shape {
+    background: #252730 !important;
+    border: 2px solid #41dd76 !important;
+    filter: drop-shadow(0 20px 25px rgba(65,221,118,0.18)) !important;
+    opacity: 0.95 !important; /* lebih jelas di dark mode */
+}
+body.manual-dark .scroll,
+html.manual-dark .scroll {
+    background: #23252b !important;
+    color: #41dd76 !important;
+    border: 2px solid #41dd76 !important;
+}
+body.manual-dark .award,
+html.manual-dark .award {
+    background: #23252b !important;
+    color: #41dd76 !important;
+    box-shadow: 0 6px 24px rgba(65, 221, 118, 0.18) !important;
+}
+
+/* ===== MANUAL DARK MODE OVERRIDE (PASTIKAN DI PALING BAWAH) ===== */
+body.manual-dark, html.manual-dark {
+    background: #181a20 !important;
+    color: #f2f2f2 !important;
+}
+body.manual-dark header, html.manual-dark header {
+    background: #23252b !important;
+}
+body.manual-dark .logo, html.manual-dark .logo {
+    color: #41dd76 !important;
+}
+body.manual-dark .menu a, html.manual-dark .menu a {
+    color: #f2f2f2 !important;
+}
+body.manual-dark .right, html.manual-dark .right {
+    color: #f2f2f2 !important;
+}
+body.manual-dark .icon, html.manual-dark .icon {
+    background: #222 !important;
+    border: 1px solid #41dd76 !important;
+}
+body.manual-dark .hero, html.manual-dark .hero {
+    background: #181a20 !important;
+}
+body.manual-dark .hero h1, html.manual-dark .hero h1 {
+    color: #f2f2f2 !important;
+}
+body.manual-dark .hero p, html.manual-dark .hero p {
+    color: #bdbdbd !important;
+}
+body.manual-dark .btn-green, html.manual-dark .btn-green {
+    background: #41dd76 !important;
+    color: #181a20 !important;
+}
+body.manual-dark .btn-white, html.manual-dark .btn-white {
+    background: #23252b !important;
+    color: #41dd76 !important;
+    border: 1px solid #41dd76 !important;
+}
+body.manual-dark .shape, html.manual-dark .shape {
+    background: #252730 !important;
+    border: 2px solid #41dd76 !important;
+    filter: drop-shadow(0 20px 25px rgba(65,221,118,0.18)) !important;
+    opacity: 0.95 !important;
+}
+body.manual-dark .scroll, html.manual-dark .scroll {
+    background: #23252b !important;
+    color: #41dd76 !important;
+    border: 2px solid #41dd76 !important;
+}
+body.manual-dark .award, html.manual-dark .award {
+    background: #23252b !important;
+    color: #41dd76 !important;
+    box-shadow: 0 6px 24px rgba(65, 221, 118, 0.18) !important;
+}
+
+/* ===== MANUAL LIGHT MODE OVERRIDE ===== */
+body.manual-light, html.manual-light {
+    background: #ffffff !important;
+    color: #222 !important;
+}
+body.manual-light header, html.manual-light header {
+    background: #fff !important;
+}
+body.manual-light .logo, html.manual-light .logo {
+    color: #222 !important;
+}
+body.manual-light .menu a, html.manual-light .menu a {
+    color: #000 !important;
+}
+body.manual-light .right, html.manual-light .right {
+    color: #222 !important;
+}
+body.manual-light .icon, html.manual-light .icon {
+    background: #41dd76 !important;
+    border: none !important;
+}
+body.manual-light .hero, html.manual-light .hero {
+    background: #fff !important;
+}
+body.manual-light .hero h1, html.manual-light .hero h1 {
+    color: #222 !important;
+}
+body.manual-light .hero p, html.manual-light .hero p {
+    color: #777 !important;
+}
+body.manual-light .btn-green, html.manual-light .btn-green {
+    background: #41dd76 !important;
+    color: #fff !important;
+}
+body.manual-light .btn-white, html.manual-light .btn-white {
+    background: #fff !important;
+    color: #333 !important;
+    border: none !important;
+}
+body.manual-light .shape,
+body.manual-light .shape {
+    background: #fff !important;
+    border: 2px solid #41dd76 !important; /* border hijau agar shape lebih jelas di light mode */
+    filter: drop-shadow(0 20px 25px rgba(65,221,118,0.12)) !important;
+    opacity: 1 !important;
+}
+body.manual-light .scroll, html.manual-light .scroll {
+    background: #fff !important;
+    color: #111 !important;
+    border: 2px solid #111 !important;
+}
+body.manual-light .award, html.manual-light .award {
+    background: #fff !important;
+    color: #222 !important;
+    box-shadow: 0 6px 24px rgba(65, 221, 118, 0.12) !important;
+}
+body.manual-light .lang-btn, html.manual-light .lang-btn {
+    background: #fff !important;
+    color: #222 !important;
+    border: 1px solid #41dd76 !important;
+}
+body.manual-light .lang-btn:hover,
+html.manual-light .lang-btn:hover,
+body.manual-light .lang-btn.active,
+html.manual-light .lang-btn.active {
+    background: #41dd76 !important;
+    color: #fff !important;
+}
+body.manual-light .theme-btn, html.manual-light .theme-btn {
+    background: #fff !important;
+    color: #222 !important;
+    border: 1px solid #41dd76 !important;
+}
+body.manual-light .theme-btn:hover,
+html.manual-light .theme-btn:hover,
+body.manual-light .theme-btn.active,
+html.manual-light .theme-btn.active {
+    background: #41dd76 !important;
+    color: #fff !important;
+}
