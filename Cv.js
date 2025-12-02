@@ -1,75 +1,45 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =============================
+   PORTFOLIO SLIDER
+============================= */
+let index = 0;
+const slides = document.querySelectorAll('.slide');
 
-    const langBtn = document.getElementById("lang-toggle");
-    const themeBtn = document.getElementById("theme-toggle");
+function showSlide() {
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[index].classList.add('active');
 
-    // Default Bahasa
-    let currentLang = "en"; // Bisa diubah ke "id" kalau mau default Indonesia
+  index = (index + 1) % slides.length;
+}
 
-    // Default Theme
-    let currentTheme = localStorage.getItem("theme") || "light"; // Default light, atau dari localStorage
+setInterval(showSlide, 3000);
+showSlide();
 
-    function applyLanguage(lang) {
-        if (lang === "en") {
-            langBtn.textContent = "EN";
+/* =============================
+   SCROLL REVEAL EFFECT
+============================= */
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
 
-            document.getElementById("hero-title").innerHTML = "My work<br>is your best solution";
-            document.getElementById("hero-desc").innerHTML = 'FIRST ORDER <span class="highlight">50% DISCOUNT</span>';
-            document.getElementById("contact-btn").textContent = "Contact";
-            document.getElementById("about-btn").textContent = "About me";
-            document.getElementById("award-title").textContent = "BEST DESIGNER";
-            document.getElementById("award-desc").innerHTML = "UX and UI<br>2020";
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 150;
 
-            document.querySelectorAll('.menu a')[0].textContent = "Home";
-            document.querySelectorAll('.menu a')[1].textContent = "About me";
-            document.querySelectorAll('.menu a')[2].textContent = "Gallery";
-
-        } else {
-            langBtn.textContent = "ID";
-
-            document.getElementById("hero-title").innerHTML = "Karya saya<br>adalah solusi terbaik Anda";
-            document.getElementById("hero-desc").innerHTML = 'PESAN PERTAMA <span class="highlight">DISKON 50%</span>';
-            document.getElementById("contact-btn").textContent = "Kontak";
-            document.getElementById("about-btn").textContent = "Tentang saya";
-            document.getElementById("award-title").textContent = "DESAINER TERBAIK";
-            document.getElementById("award-desc").innerHTML = "UX dan UI<br>2020";
-
-            document.querySelectorAll('.menu a')[0].textContent = "Beranda";
-            document.querySelectorAll('.menu a')[1].textContent = "Tentang saya";
-            document.querySelectorAll('.menu a')[2].textContent = "Galeri";
-        }
+    if (revealTop < windowHeight - revealPoint) {
+      reveals[i].classList.add('active');
     }
+  }
+}
 
-    function applyTheme(theme) {
-        if (theme === "dark") {
-            document.body.classList.add("manual-dark");
-            document.documentElement.classList.add("manual-dark");
-            document.body.classList.remove("manual-light");
-            document.documentElement.classList.remove("manual-light");
-            themeBtn.textContent = "🌙"; // Moon for dark mode
-        } else {
-            document.body.classList.add("manual-light");
-            document.documentElement.classList.add("manual-light");
-            document.body.classList.remove("manual-dark");
-            document.documentElement.classList.remove("manual-dark");
-            themeBtn.textContent = "☀️"; // Sun for light mode
-        }
-        localStorage.setItem("theme", theme);
-    }
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
 
-    // Event Toggle Language
-    langBtn.addEventListener("click", () => {
-        currentLang = currentLang === "en" ? "id" : "en";
-        applyLanguage(currentLang);
+/* =============================
+   BACK TO TOP
+============================= */
+const backTop = document.querySelector('.back-top');
+if (backTop) {
+    backTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
-
-    // Event Toggle Theme
-    themeBtn.addEventListener("click", () => {
-        currentTheme = currentTheme === "light" ? "dark" : "light";
-        applyTheme(currentTheme);
-    });
-
-    // Jalankan default bahasa dan theme
-    applyLanguage(currentLang);
-    applyTheme(currentTheme);
-});
+}

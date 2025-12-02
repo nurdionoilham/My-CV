@@ -1,58 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UI UX Designer</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="Cv.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nurdiono Ilham – Portfolio</title>
+  <link rel="stylesheet" href="Cv.css" />
 </head>
-
 <body>
 
-    <!-- Shapes di belakang header dan hero -->
-    <div class="shape s1"></div>
-    <div class="shape s2"></div>
-    <div class="shape round s3"></div>
-    <div class="shape s4"></div>
-    <div class="shape s5"></div>
-    <div class="shape s6"></div>
-    <div class="shape round s7"></div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h2 class="logo">Nurdiono Ilham</h2>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact" class="btn-contact">Contact Me</a>
+    </div>
+  </nav>
 
-    <header>
-        <div class="logo">UI UX<br>DESIGNER</div>
-        <nav class="menu">
-            <a href="#">Home</a>
-            <a href="#">About me</a>
-            <a href="#">Gallery</a>
-        </nav>
-        <div class="right">
-            <button id="lang-toggle" class="lang-btn">EN</button>
-            <button id="theme-toggle" class="theme-btn">☀️</button>
-        </div>
-    </header>
+  <!-- HERO SECTION -->
+  <section class="hero reveal">
+    <div class="hero-text">
+      <h3>Hello!</h3>
+      <h1>I'm Nurdiono Ilham</h1>
+      <h2>I'M A DEVELOPER</h2>
+    </div>
+  </section>
 
-    <section class="hero">
-        <!-- Konten utama -->
-        <h1 id="hero-title">My work<br>is your best solution</h1>
-        <p id="hero-desc">FIRST ORDER <span class="highlight">50% DISCOUNT</span></p>
-        <div class="btn-group">
-            <button class="btn-green" id="contact-btn">Contact</button>
-            <button class="btn-white" id="about-btn">About me</button>
-        </div>
-        <div class="scroll">&#8595;</div>
-        <div class="award">
-            <b id="award-title">BEST DESIGNER</b><br>
-            <span id="award-desc">UX and UI<br>2020</span>
-        </div>
-    </section>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about reveal">
+    <h2 class="section-title">ABOUT ME</h2>
+    <p>
+      Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus.
+      Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est.
+    </p>
 
-    <!-- JS -->
-    <script src="Cv.js"></script>
+    <div class="services">
+      <div class="service reveal">
+        <h3>DEVELOPMENT</h3>
+        <p>I can design and develop websites based on your needs.</p>
+      </div>
+      <div class="service reveal">
+        <h3>DESIGN</h3>
+        <p>I can create UI/UX designs tailored for your brand.</p>
+      </div>
+      <div class="service reveal">
+        <h3>MAINTENANCE</h3>
+        <p>I help maintain your website consistently & reliably.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills reveal">
+    <h2 class="section-title">SKILLS</h2>
+    <div class="skill-grid">
+      <div class="skill-card">HTML5</div>
+      <div class="skill-card">CSS3</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">C</div>
+      <div class="skill-card">C++</div>
+      <div class="skill-card">English</div>
+      <div class="skill-card">Figma</div>
+      <div class="skill-card">UI/UX</div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="portfolio reveal">
+    <h2 class="section-title">PORTFOLIO</h2>
+    <div class="slider">
+      <img src="pj 1.png" class="slide active" alt="Project 1" />
+      <img src="pj2 - 1.jpg" class="slide" alt="Project 2" />
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact reveal">
+    <h2 class="section-title">CONTACT</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Enter your name*" required />
+      <input type="email" placeholder="Enter your email*" required />
+      <input type="text" placeholder="Phone number" />
+      <textarea rows="5" placeholder="Your message*"></textarea>
+      <button type="submit">SUBMIT</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+    <p>@2025 Nurdiono Ilham — All Rights Reserved.</p>
+    <p class="back-top">BACK TO TOP</p>
+  </footer>
+
+  <script src="CV.js"></script>
 </body>
 </html>
